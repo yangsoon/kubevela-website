@@ -1,8 +1,8 @@
-FROM node:12.22.1
+FROM node:14.17
 WORKDIR /workspace
 COPY dev.sh /workspace
 
-RUN git clone https://github.com/oam-dev/kubevela.io.git && cd kubevela.io && git checkout -b dev
+RUN git init kubevela.io
 
 ENTRYPOINT [ "bash", "dev.sh" ]
 CMD [ "-t" "start" ]
